@@ -2,6 +2,7 @@ import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
+import WorkflowFeatures from './components/WorkflowFeatures';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -15,6 +16,7 @@ function App() {
         <main>
           <Hero />
           <AboutUs />
+          <WorkflowFeatures />
           <Services />
           <Contact />
         </main>
