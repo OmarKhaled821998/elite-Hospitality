@@ -126,23 +126,27 @@ const Services: React.FC = () => {
         </div>
 
         {/* Workflow & Features section */}
-        <div style={{
-          backgroundColor: 'var(--color-navy)',
-          borderRadius: '24px',
-          padding: '5rem',
-          color: 'var(--color-white)',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '5rem',
-          boxShadow: 'var(--shadow-lg)'
-        }}>
-          <div>
+        <div className="workflow-features-container">
+          <div className="workflow-content">
             <h3 style={{ color: 'var(--color-gold)', marginBottom: '2rem', fontSize: '2rem' }}>
               {t('workflow.title')}
             </h3>
-            <p style={{ color: 'var(--color-light-gray)', lineHeight: 1.8, fontSize: '1.1rem' }}>
-              {t('workflow.desc')}
-            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {t('workflow.desc').split(/(?:\s*[→←]\s*)/).map((step, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <div style={{ 
+                    width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'rgba(197, 160, 89, 0.15)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--color-gold)',
+                    fontWeight: 'bold', fontSize: '0.9rem', flexShrink: 0
+                  }}>
+                    {idx + 1}
+                  </div>
+                  <span style={{ color: 'var(--color-light-gray)', lineHeight: 1.5, fontSize: '1.1rem' }}>
+                    {step}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div>
@@ -168,11 +172,20 @@ const Services: React.FC = () => {
           .service-block {
             flex-direction: column !important;
             text-align: center;
+            gap: 2rem !important; /* Reduce gap on mobile */
           }
           .service-block > div:first-child {
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-width: 0 !important;
+            width: 100% !important;
+          }
+          
+          /* Handle grid area scaling on mobile */
+          .service-block > div:last-child {
+            width: 100% !important;
+            min-width: 0 !important;
           }
         }
       `}</style>

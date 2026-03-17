@@ -272,8 +272,31 @@ html[dir="rtl"] .menu-close {
 }
 
 /* Mobile Responsive Adjustments */
-@media (max-width: 768px) {
+.workflow-features-container {
+  background-color: var(--color-navy);
+  border-radius: 24px;
+  padding: 5rem;
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 5rem;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden; /* prevent child content from breaking out */
+}
+
+.workflow-features-container > div {
+  min-width: 0; /* allows text to wrap correctly in CSS Grid */
+}
+
+@media (max-width: 900px) {
   .section {
     padding: 4rem 0;
+  }
+  
+  .workflow-features-container {
+    padding: 2.5rem 1.5rem;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    border-radius: 16px;
   }
 }
