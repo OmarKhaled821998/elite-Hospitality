@@ -70,8 +70,10 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.message': 'Your Message',
     'contact.form.submit': 'Send Message',
     'contact.info': 'Contact Information:',
-    'contact.person1': 'Ahmed Abdel Azim: +2 01023292001',
-    'contact.person2': 'Abdelrahman Eliwa: +20 114 444 0304',
+    'contact.person1': 'Ahmed Abdel Azim',
+    'contact.person2': 'Abdelrahman Eliwa',
+    'contact.email': 'Email',
+    'contact.location': 'Location',
     
     // Floating CTA
     'floating.cta': 'Book Consultation'
@@ -130,8 +132,10 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.form.message': 'رسالتك',
     'contact.form.submit': 'إرسال الرسالة',
     'contact.info': 'معلومات الاتصال:',
-    'contact.person1': 'أحمد عبد العظيم: +2 01023292001',
-    'contact.person2': 'عبد الرحمن عليوة: +20 114 444 0304',
+    'contact.person1': 'أحمد عبد العظيم',
+    'contact.person2': 'عبد الرحمن عليوة',
+    'contact.email': 'البريد الإلكتروني',
+    'contact.location': 'الموقع',
     
     // Floating CTA
     'floating.cta': 'احجز استشارتك'

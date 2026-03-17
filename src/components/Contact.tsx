@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Phone, Mail, MapPin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
   const { t, language } = useLanguage();
@@ -32,47 +33,108 @@ const Contact: React.FC = () => {
           <div style={{ padding: '2rem', backgroundColor: 'var(--color-cream)', borderRadius: '12px' }}>
             <h3 style={{ marginBottom: '2rem', color: 'var(--color-navy)' }}>{t('contact.info')}</h3>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'var(--color-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Phone size={24} color="var(--color-gold)" />
-                </div>
-                <div>
-                  <a href="tel:+201023292001" style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)', textDecoration: 'none' }}>
-                    {t('contact.person1')}
-                  </a>
-                </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--color-light-gray)', paddingBottom: '1rem' }}>
+                <span style={{ fontWeight: 600, color: 'var(--color-dark)', fontSize: '1.1rem' }}>
+                  {t('contact.person1')}
+                </span>
+                <motion.a 
+                  href="tel:+201023292001" 
+                  whileHover={{ scale: 1.1, y: -3, boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    width: '50px', 
+                    height: '50px', 
+                    borderRadius: '50%', 
+                    backgroundColor: 'var(--color-navy)', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Phone size={22} color="var(--color-gold)" />
+                </motion.a>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'var(--color-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Phone size={24} color="var(--color-gold)" />
-                </div>
-                <div>
-                  <a href="tel:+201144440304" style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)', textDecoration: 'none' }}>
-                    {t('contact.person2')}
-                  </a>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--color-light-gray)', paddingBottom: '1rem' }}>
+                <span style={{ fontWeight: 600, color: 'var(--color-dark)', fontSize: '1.1rem' }}>
+                  {t('contact.person2')}
+                </span>
+                <motion.a 
+                  href="tel:+201144440304" 
+                  whileHover={{ scale: 1.1, y: -3, boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    width: '50px', 
+                    height: '50px', 
+                    borderRadius: '50%', 
+                    backgroundColor: 'var(--color-navy)', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Phone size={22} color="var(--color-gold)" />
+                </motion.a>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'var(--color-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Mail size={24} color="var(--color-gold)" />
-                </div>
-                <div>
-                  <a href="mailto:info@elite-hospitality.eg" style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)', textDecoration: 'none' }}>
-                    info@elite-hospitality.eg
-                  </a>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--color-light-gray)', paddingBottom: '1rem' }}>
+                <span style={{ fontWeight: 600, color: 'var(--color-dark)', fontSize: '1.1rem' }}>
+                  {t('contact.email')}
+                </span>
+                <motion.a 
+                  href="mailto:info@elite-hospitality.eg" 
+                  whileHover={{ scale: 1.1, y: -3, boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    width: '50px', 
+                    height: '50px', 
+                    borderRadius: '50%', 
+                    backgroundColor: 'var(--color-navy)', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Mail size={22} color="var(--color-gold)" />
+                </motion.a>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '50%', backgroundColor: 'var(--color-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <MapPin size={24} color="var(--color-gold)" />
-                </div>
-                <div>
-                  <p style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)' }}>Privado Compound - Madinaty, Egypt</p>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <span style={{ fontWeight: 600, color: 'var(--color-dark)', fontSize: '1.1rem', maxWidth: '70%' }}>
+                  {t('contact.location')}
+                </span>
+                <motion.a 
+                  href="https://maps.google.com/?q=Privado+Compound+Madinaty+Egypt" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -3, boxShadow: '0 8px 15px rgba(0, 0, 0, 0.1)' }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    width: '50px', 
+                    height: '50px', 
+                    borderRadius: '50%', 
+                    backgroundColor: 'var(--color-navy)', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.05)',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <MapPin size={22} color="var(--color-gold)" />
+                </motion.a>
               </div>
             </div>
           </div>
