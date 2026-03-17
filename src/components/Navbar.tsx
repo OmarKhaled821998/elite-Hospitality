@@ -1,31 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Globe } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const { t, language, toggleLanguage } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="navbar">
-      <div className="container">
-        <a href="#" className="nav-brand">
-          <span style={{ color: 'var(--color-gold)' }}>Elite</span>
-          <span>Hospitality</span>
-        </a>
-        
-        <ul className="nav-links">
-          <li><a href="#home" className="nav-link">{t('nav.home')}</a></li>
-          <li><a href="#about" className="nav-link">{t('nav.about')}</a></li>
-          <li><a href="#services" className="nav-link">{t('nav.services')}</a></li>
-          <li><a href="#contact" className="nav-link">{t('nav.contact')}</a></li>
-        </ul>
+    <>
+      <nav className="navbar">
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <a href="#" className="nav-brand" onClick={closeMenu}>
+            <span style={{ color: 'var(--color-gold)' }}>Elite</span>
+            <span>Hospitality</span>
+          </a>
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+            <button className="lang-toggle" onClick={toggleLanguage} aria-label="Toggle language">
+              <Globe size={18} />
+              <span className="ltr-only">{language === 'en' ? 'العربية' : 'EN'}</span>
+              <span className="rtl-only">{language === 'ar' ? 'EN' : 'العربية'}</span>
+            </button>
+            <button 
+              className="menu-toggle" 
+              onClick={toggleMenu} 
+              aria-label="Toggle menu"
+            >
+              <Menu size={28} />
+            </button>
+          </div>
+        </div>
+      </nav>
 
-        <button className="lang-toggle" onClick={toggleLanguage} aria-label="Toggle language">
-          <Globe size={18} />
-          {language === 'en' ? 'العربية' : 'EN'}
+      {/* Full Screen Menu Overlay */}
+      <div className={`menu-overlay ${isMenuOpen ? 'open' : ''}`}>
+        <button className="menu-close" onClick={closeMenu} aria-label="Close menu">
+          <X size={32} />
         </button>
+        <ul className="overlay-nav-links">
+          <li><a href="#home" className="overlay-nav-link" onClick={closeMenu}>{t('nav.home')}</a></li>
+          <li><a href="#about" className="overlay-nav-link" onClick={closeMenu}>{t('nav.about')}</a></li>
+          <li><a href="#services" className="overlay-nav-link" onClick={closeMenu}>{t('nav.services')}</a></li>
+          <li><a href="#contact" className="overlay-nav-link" onClick={closeMenu}>{t('nav.contact')}</a></li>
+        </ul>
       </div>
-    </nav>
+    </>
   );
 };
 

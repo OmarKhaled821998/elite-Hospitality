@@ -4,18 +4,10 @@ import { Key, Paintbrush, Home, Wrench, CheckCircle } from 'lucide-react';
 import PhotoGrid from './PhotoGrid';
 
 const rentalImages = [
-  '/assets/rental/r0.jpeg',
-  '/assets/rental/r1.jpeg',
+  '/assets/rental/r01.jpeg',
   '/assets/rental/r02.jpeg',
   '/assets/rental/r03.jpeg',
-  '/assets/rental/r06.jpeg',
-  '/assets/rental/r07.jpeg',
-  '/assets/rental/r08.jpeg',
-  '/assets/rental/r09.jpeg',
-  '/assets/rental/r10.jpeg',
-  '/assets/rental/r11.jpeg',
-  '/assets/rental/r12.jpeg',
-  '/assets/rental/r13.jpeg',
+  '/assets/rental/r04.jpeg',
 ];
 
 const housekeepingImages = [
@@ -31,9 +23,10 @@ const hospitalityImages = [
 ];
 
 const maintenanceImages = [
-  '/assets/Maintenance/maintenance0.png',
+  '/assets/Maintenance/maintenance0.jpeg',
   '/assets/Maintenance/maintenance1.jpeg',
-  '/assets/Maintenance/maintenance2.jpg',
+  '/assets/Maintenance/maintenance2.jpeg',
+  '/assets/Maintenance/maintenance3.jpeg',
 ];
 
 const Services: React.FC = () => {
