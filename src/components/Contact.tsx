@@ -42,7 +42,9 @@ const Contact: React.FC = () => {
                   <Phone size={24} color="var(--color-gold)" />
                 </div>
                 <div>
-                  <p style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)' }}>{t('contact.person1')}</p>
+                  <a href="tel:+201023292001" style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)', textDecoration: 'none' }}>
+                    {t('contact.person1')}
+                  </a>
                 </div>
               </div>
 
@@ -51,7 +53,9 @@ const Contact: React.FC = () => {
                   <Phone size={24} color="var(--color-gold)" />
                 </div>
                 <div>
-                  <p style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)' }}>{t('contact.person2')}</p>
+                  <a href="tel:+201144440304" style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)', textDecoration: 'none' }}>
+                    {t('contact.person2')}
+                  </a>
                 </div>
               </div>
 
@@ -60,7 +64,9 @@ const Contact: React.FC = () => {
                   <Mail size={24} color="var(--color-gold)" />
                 </div>
                 <div>
-                  <p style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)' }}>info@elite-hospitality.eg</p>
+                  <a href="mailto:info@elite-hospitality.eg" style={{ margin: 0, fontWeight: 600, color: 'var(--color-dark)', textDecoration: 'none' }}>
+                    info@elite-hospitality.eg
+                  </a>
                 </div>
               </div>
 
