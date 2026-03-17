@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
             <span>Hospitality</span>
           </a>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <div className="nav-actions">
             <button className="lang-toggle" onClick={toggleLanguage} aria-label="Toggle language">
               <Globe size={18} />
               <span className="ltr-only">{language === 'en' ? 'العربية' : 'EN'}</span>

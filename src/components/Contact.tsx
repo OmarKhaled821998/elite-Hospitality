@@ -27,11 +27,7 @@ const Contact: React.FC = () => {
           <div style={{ width: '60px', height: '3px', backgroundColor: 'var(--color-gold)', margin: '1rem auto 0' }}></div>
         </div>
 
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '4rem'
-        }}>
+        <div className="contact-grid">
           {/* Contact Details */}
           <div style={{ padding: '2rem', backgroundColor: 'var(--color-cream)', borderRadius: '12px' }}>
             <h3 style={{ marginBottom: '2rem', color: 'var(--color-navy)' }}>{t('contact.info')}</h3>
@@ -87,7 +83,7 @@ const Contact: React.FC = () => {
             flexDirection: 'column',
             gap: '1.5rem'
           }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="contact-inputs">
               <input 
                 type="text" 
                 name="name"
